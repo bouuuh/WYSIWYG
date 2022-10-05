@@ -1,21 +1,18 @@
 let valueTextArea = document.querySelector(".coding-frame");
 let result = document.querySelector(".result");
 valueTextArea.style.resize = "none";
+   
+ 
+   
 
 valueTextArea.addEventListener('input', function handleChange(event) {
-   
-   let nbCaracters = valueTextArea.value.length;
+  let nbCaracters = valueTextArea.value.length;
    let caractersBottom = result.innerText;
    let nbCaractersBottom = caractersBottom.length;
-    if(nbCaractersBottom<200){
-        result.innerHTML = event.target.value;
-    }
-   
-   
-    let bar = document.querySelector(".progress-bar");
-    let width = (nbCaractersBottom / 2) + "%";
 
-    bar.style.width = width;
+       let bar = document.querySelector(".progress-bar");
+     let width = (nbCaractersBottom / 2) + "%";   
+ bar.style.width = width;
         if (nbCaractersBottom <= 100) {
             bar.style.background = "green";
         }
@@ -25,11 +22,23 @@ valueTextArea.addEventListener('input', function handleChange(event) {
         else if (nbCaractersBottom <= 200) {
             bar.style.background = "red";
         }
+
+
+
+    if(nbCaractersBottom<200){
+        result.innerHTML = event.target.value;
+       
+    }
+    else if (nbCaractersBottom === 200){
+      valueTextArea.setAttribute("maxlength", nbCaracters);
+      
+    }
+   
     
   });
 
 
-  //Animation with mouse
+  //Animation on hover valueTextArea
   let movemouse = document.querySelector("#mouse-move");
 
   valueTextArea.onmouseout = function (event) {
