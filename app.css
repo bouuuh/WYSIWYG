@@ -4,6 +4,7 @@
 }
 body{
     background: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 .main-frame{
     display: flex;
@@ -11,7 +12,7 @@ body{
     align-items: center;
 }
 h1{
-    margin-top: 3vh;
+    margin-top: 1vh;
     margin-bottom: 3vh;
 }
 .coding-frame{
@@ -41,7 +42,7 @@ h1{
     height: 1vh;
     background: rgb(204, 204, 204);
     border: 1px solid black;
-   
+   border-radius: 20px;
 } 
 .progress-bar{
     width: 0;
@@ -69,11 +70,26 @@ h1{
       transform: rotate(360deg);
     }
   }
+
 .dark{
-    border: 1px solid black;
-    margin-top : 3vh;
+    border: 1px solid rgb(243, 243, 243);
+    background: rgb(15, 15, 15);
+    color: rgb(240, 240, 240);
+}
+.dark2{
+    background: rgb(15, 15, 15);
+    color: rgb(240, 240, 240);
+}
+label{
+    font-size: 20px;
+    margin-left: 5px;
+}
+.the-dark-mode{
+     border: 1px solid black;
+    width: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 3vh;
     margin-left: 3vh;
-    height: 3vh;
-    width: 10vh;
-    font-size: 18px;
 }

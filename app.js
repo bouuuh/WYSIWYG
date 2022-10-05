@@ -1,42 +1,67 @@
 let valueTextArea = document.querySelector(".coding-frame");
 let result = document.querySelector(".result");
+let bar = document.querySelector(".progress-bar");
 valueTextArea.style.resize = "none";
-   
- 
-   
 
-valueTextArea.addEventListener('input', function handleChange(event) {
-  let nbCaracters = valueTextArea.value.length;
-   let caractersBottom = result.innerText;
-   let nbCaractersBottom = caractersBottom.length;
+valueTextArea.addEventListener("keyup", function() {
+  //On donne affiche le résultat dans la Div
+  let endResult = valueTextArea.value;
+  result.innerHTML = endResult;
 
-       let bar = document.querySelector(".progress-bar");
-     let width = (nbCaractersBottom / 2) + "%";   
- bar.style.width = width;
-        if (nbCaractersBottom <= 100) {
-            bar.style.background = "green";
-        }
-        else if (nbCaractersBottom <= 170) {
-            bar.style.background = "orange";
-        }
-        else if (nbCaractersBottom <= 200) {
-            bar.style.background = "red";
-        }
+  //On fait la barre
 
+  //Nombre de caractères en bas
+  let caractersBottom = result.innerText;
+  let nbCaractersBottom = caractersBottom.length;
 
+   //Calcul de la longueur de la barre
+   let width = (nbCaractersBottom / 2) + "%";
+   bar.style.width = width;
+   //On lui donne ses couleurs
+   if (nbCaractersBottom <= 100) {
+    bar.style.background = "green"; 
+  }
+  else if (nbCaractersBottom <= 170) {
+    bar.style.background = "orange";
+  }
+  else if (nbCaractersBottom <= 200) {
+    bar.style.background = "red";
+  }
 
-    if(nbCaractersBottom<200){
-        result.innerHTML = event.target.value;
-       
-    }
-    else if (nbCaractersBottom === 200){
-      valueTextArea.setAttribute("maxlength", nbCaracters);
-      
-    }
-   
-    
-  });
+  //On limite le nombre de caractère en haut
+  if (nbCaractersBottom === 200){
+    valueTextArea.setAttribute("maxlength", 0);
+  }
+  else if (nbCaractersBottom<200){
+    valueTextArea.setAttribute("maxlength", "");
+  }
+});
 
+//buttons
+let beStrong = document.querySelector(".strong");
+beStrong.addEventListener('click', function addTag(){
+  valueTextArea.value += '<strong>' + '</strong>';
+});
+
+let beUnderline = document.querySelector(".underline");
+beUnderline.addEventListener('click', function addTag(){
+  valueTextArea.value += '<u>' + '</u>';
+});
+
+let beLinked = document.querySelector(".link");
+beLinked.addEventListener('click', function addTag(){
+  valueTextArea.value += '<a>' + '</a>';
+});
+
+let beImage = document.querySelector(".img");
+beImage.addEventListener('click', function addTag(){
+  valueTextArea.value += '<img>' + '</img>';
+});
+
+let beItalic = document.querySelector(".italic");
+beItalic.addEventListener('click', function addTag2(){
+  valueTextArea.value += '<em>' + '</em>';
+});
 
   //Animation on hover valueTextArea
   let movemouse = document.querySelector("#mouse-move");
@@ -49,32 +74,18 @@ valueTextArea.addEventListener('input', function handleChange(event) {
   };
 
 
-  //buttons
-  let strong = document.querySelector(".strong");
-
-  strong.addEventListener('click', function addTag(){
-    valueTextArea.value += '<strong>' + '</strong>';
-  });
-
-  let italic = document.querySelector(".italic");
-
-  italic.addEventListener('click', function addTag2(){
-    valueTextArea.value += '<em>' + '</em>';
-  });
-
   //Dark mode
-  let dark = document.querySelector(".dark");
+  let darkBtn = document.querySelector(".btn-dark");
   let body = document.querySelector("body");
-  dark.addEventListener('click', function darkMode(){
-    body.style.background = "#171717";
-    body.style.color = "#fff";
-    result.style.background = "#424242";
-    valueTextArea.style.background = "#424242";
-    result.style.color = "#fff";
-    valueTextArea.style.color = "#fff";
-    dark.style.background = "#000";
-    dark.style.color = "#fff";
-    dark.style.border = "1px solid white";
+  let all = document.querySelector("*");
+  darkBtn.addEventListener('click', function darkMode(){
+  darkBtn.classList.toggle("dark");
+  body.classList.toggle("dark2");
+  beStrong.classList.toggle("dark");
+  beItalic.classList.toggle("dark");
+  beUnderline.classList.toggle("dark");
+  beLinked.classList.toggle("dark");
+  beImage.classList.toggle("dark");
+  valueTextArea.classList.toggle("dark");
+  result.classList.toggle("dark");
   });
-
-  
