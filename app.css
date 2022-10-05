@@ -18,13 +18,13 @@ h1{
 .coding-frame{
     border: 2px solid black;
     width: 80vh;
-    height: 35vh;
+    height: 25vh;
     margin-top: 3vh;
 }
 .result{
     border: 2px solid black;
     width: 80vh;
-    height: 35vh;
+    height: 25vh;
     margin-top: 3vh;
     word-wrap: break-word;
 }
@@ -54,9 +54,9 @@ h1{
 }
 #mouse-move {
     display: none;
-    border: 2px solid rgb(115, 15, 161);
+    border: 2px solid rgb(19, 19, 19);
     border-radius: 50%;
-    border-top: 2px solid rgb(236, 153, 153);
+    border-top: 2px solid rgb(124, 124, 124);
     width: 20px;
     height: 20px;
     animation: spin 2s linear infinite;
@@ -92,4 +92,27 @@ label{
     justify-content: center;
     margin-top: 3vh;
     margin-left: 3vh;
+}
+.popup{
+    width: 30vh;
+    height: 10vh;
+    border: 1px solid black;
+    border-radius: 20px;
+    margin-top: 7vh;
+    margin-right: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: red;
+    color: white;
+    font-weight: 700;
+    
+    font-size: 18px;
+}
+.end{
+    display: flex;
+    justify-content: flex-end;
+}
+.thenone{
+    display: none;
 }

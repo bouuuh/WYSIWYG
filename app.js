@@ -3,7 +3,7 @@ let result = document.querySelector(".result");
 let bar = document.querySelector(".progress-bar");
 valueTextArea.style.resize = "none";
 
-valueTextArea.addEventListener("keyup", function() {
+valueTextArea.addEventListener("input", function() {
   //On donne affiche le résultat dans la Div
   let endResult = valueTextArea.value;
   result.innerHTML = endResult;
@@ -28,12 +28,17 @@ valueTextArea.addEventListener("keyup", function() {
     bar.style.background = "red";
   }
 
+//popup
+let thePopup = document.querySelector(".thenone");
+
   //On limite le nombre de caractère en haut
   if (nbCaractersBottom === 200){
     valueTextArea.setAttribute("maxlength", 0);
+    thePopup.style.display = "block";
   }
   else if (nbCaractersBottom<200){
     valueTextArea.setAttribute("maxlength", "");
+    thePopup.style.display = "none";
   }
 });
 
@@ -63,6 +68,14 @@ beItalic.addEventListener('click', function addTag2(){
   valueTextArea.value += '<em>' + '</em>';
 });
 
+let beClear = document.querySelector(".clear");
+beClear.addEventListener('click', function clearText(){
+  valueTextArea.value = "";
+  result.innerText = "";
+  bar.style.width = 0;
+  window.location.reload();
+});
+
   //Animation on hover valueTextArea
   let movemouse = document.querySelector("#mouse-move");
 
@@ -78,6 +91,7 @@ beItalic.addEventListener('click', function addTag2(){
   let darkBtn = document.querySelector(".btn-dark");
   let body = document.querySelector("body");
   let all = document.querySelector("*");
+  
   darkBtn.addEventListener('click', function darkMode(){
   darkBtn.classList.toggle("dark");
   body.classList.toggle("dark2");
@@ -88,4 +102,5 @@ beItalic.addEventListener('click', function addTag2(){
   beImage.classList.toggle("dark");
   valueTextArea.classList.toggle("dark");
   result.classList.toggle("dark");
+  beClear.classList.toggle("dark");
   });
