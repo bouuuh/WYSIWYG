@@ -40,6 +40,16 @@ let thePopup = document.querySelector(".thenone");
     valueTextArea.setAttribute("maxlength", "");
     thePopup.style.display = "none";
   }
+
+
+  let beClear = document.querySelector(".clear");
+beClear.addEventListener('click', function clearText(){
+  valueTextArea.value = "";
+  result.innerText = "";
+  bar.style.width = 0;
+  thePopup.style.display = "none";
+  valueTextArea.setAttribute("maxlength", "");
+});
 });
 
 //buttons
@@ -68,13 +78,7 @@ beItalic.addEventListener('click', function addTag2(){
   valueTextArea.value += '<em>' + '</em>';
 });
 
-let beClear = document.querySelector(".clear");
-beClear.addEventListener('click', function clearText(){
-  valueTextArea.value = "";
-  result.innerText = "";
-  bar.style.width = 0;
-  window.location.reload();
-});
+
 
   //Animation on hover valueTextArea
   let movemouse = document.querySelector("#mouse-move");
