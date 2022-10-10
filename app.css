@@ -99,7 +99,7 @@ label{
     border: 1px solid black;
     border-radius: 20px;
     margin-top: 7vh;
-    margin-right: 10vh;
+    margin-left: 10vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -110,9 +110,9 @@ label{
     font-size: 18px;
 }
 .end{
-    display: flex;
-    justify-content: flex-end;
+    display: none;
 }
 .thenone{
-    display: none;
+    display: flex;
+    justify-content: flex-end;
 }
