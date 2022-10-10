@@ -34,11 +34,13 @@ let thePopup = document.querySelector(".thenone");
   //On limite le nombre de caractère en haut
   if (nbCaractersBottom === 200){
     valueTextArea.setAttribute("maxlength", 0);
-    thePopup.style.display = "block";
+    
+    popup2.style.display = "block";
   }
   else if (nbCaractersBottom<200){
     valueTextArea.setAttribute("maxlength", "");
-    thePopup.style.display = "none";
+    
+    popup2.style.display = "none";
   }
 });
 
@@ -68,12 +70,14 @@ beItalic.addEventListener('click', function addTag2(){
   valueTextArea.value += '<em>' + '</em>';
 });
 
+let popup2 = document.querySelector(".end")
+
 let beClear = document.querySelector(".clear");
 beClear.addEventListener('click', function clearText(){
   valueTextArea.value = "";
   result.innerText = "";
   bar.style.width = 0;
-  thePopup.style.display = "none";
+ popup2.style.display ="none";
   valueTextArea.setAttribute("maxlength", "");
 });
 
@@ -92,7 +96,7 @@ beClear.addEventListener('click', function clearText(){
   let darkBtn = document.querySelector(".btn-dark");
   let body = document.querySelector("body");
   let all = document.querySelector("*");
-  
+
   darkBtn.addEventListener('click', function darkMode(){
   darkBtn.classList.toggle("dark");
   body.classList.toggle("dark2");
