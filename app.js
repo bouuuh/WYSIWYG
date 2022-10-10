@@ -106,5 +106,5 @@ beItalic.addEventListener('click', function addTag2(){
   beImage.classList.toggle("dark");
   valueTextArea.classList.toggle("dark");
   result.classList.toggle("dark");
-  beClear.classList.toggle("dark");
+  
   });
